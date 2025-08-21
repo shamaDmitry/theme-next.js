@@ -1,9 +1,9 @@
 import ThemeLoader from "@/components/ThemeLoader";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import "./globals.css";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,22 +36,11 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="p-5">
-            <div>Example of 2 customers</div>
-
-            <div className="flex gap-4 mb-4">
-              <Link className="border px-2 py-1.5" href="/?userId=customerA">
-                customerA
-              </Link>
-              <Link className="border px-2 py-1.5" href="/?userId=customerB">
-                customerB
-              </Link>
-            </div>
-
+          <Suspense>
             <ThemeLoader />
+          </Suspense>
 
-            {children}
-          </div>
+          <main className="p-5">{children}</main>
         </ThemeProvider>
       </body>
     </html>

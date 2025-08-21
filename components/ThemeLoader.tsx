@@ -12,9 +12,7 @@ function getUserTheme(userId: string): string {
 
 export default function ThemeLoader() {
   const searchParams = useSearchParams();
-  const userId = searchParams.get("userId"); // ?filter=recent
-
-  console.log("userId", userId);
+  const userId = searchParams.get("userId");
 
   useEffect(() => {
     const existing = document.getElementById("customer-theme");

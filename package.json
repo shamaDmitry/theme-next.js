@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./themes/customerA.css -o ./public/themes/customerA.css --watch --minify & npx @tailwindcss/cli -i ./themes/customerB.css -o ./public/themes/customerB.css --watch --minify & next dev --turbopack ",
-    "build": "next build --turbopack",
+    "dev": "npx @tailwindcss/cli -i ./themes/customerA.css -o ./public/themes/customerA.css --watch & npx @tailwindcss/cli -i ./themes/customerB.css -o ./public/themes/customerB.css --watch & next dev --turbopack",
+    "build": "npx @tailwindcss/cli -i ./themes/customerA.css -o ./public/themes/customerA.css --minify & npx @tailwindcss/cli -i ./themes/customerB.css -o ./public/themes/customerB.css --minify & next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },
